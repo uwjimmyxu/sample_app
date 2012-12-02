@@ -37,6 +37,14 @@ describe "StaticPages" do
       end
    end
   
-   describe "Dynamic Title" do
+   describe "Contact page" do
+      it "should have the content 'Contact Us'" do
+         visit '/static_pages/contact'
+         page.should have_content('Contact Us')
+      end
+      it "should have the right title" do
+         visit '/static_pages/contact'
+         page.should have_selector('title', :text => "Ruby on Rails Tutorial Sample App | Contact")
+      end
    end
 end
