@@ -2,9 +2,14 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.9'
 gem 'bootstrap-sass', '2.1'
+gem 'bcrypt-ruby', '3.0.1'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
+
+group :development do
+#   gem 'annotate', '2.5.0'
+end
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'
@@ -13,6 +18,12 @@ group :development, :test do
   gem 'guard-spork', '1.2.0'
   gem 'spork', '0.9.2'
 end
+group :test do
+  gem 'capybara', '1.1.2'
+  gem 'rb-fsevent', '0.9.1', :require => false
+  gem 'growl', '1.0.3'
+end 
+
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -23,12 +34,6 @@ group :assets do
 end
 
 gem 'jquery-rails'
-
-group :test do
-  gem 'capybara', '1.1.2'
-  gem 'rb-fsevent', '0.9.1', :require => false
-  gem 'growl', '1.0.3'
-end 
 
 group :production do
   gem 'pg', '0.12.2'
